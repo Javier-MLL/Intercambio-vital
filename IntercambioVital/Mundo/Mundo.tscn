@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -25, 0.25, 25, 25, 0.25, 25, -25, -0.25, 25, 25, 0.25, 25, 25, -0.25, 25, -25, -0.25, 25, 25, 0.25, -25, -25, 0.25, -25, 25, -0.25, -25, -25, 0.25, -25, -25, -0.25, -25, 25, -0.25, -25, 25, 0.25, 25, 25, 0.25, -25, 25, -0.25, 25, 25, 0.25, -25, 25, -0.25, -25, 25, -0.25, 25, -25, 0.25, -25, -25, 0.25, 25, -25, -0.25, -25, -25, 0.25, 25, -25, -0.25, 25, -25, -0.25, -25, 25, 0.25, 25, -25, 0.25, 25, 25, 0.25, -25, -25, 0.25, 25, -25, 0.25, -25, 25, 0.25, -25, -25, -0.25, 25, 25, -0.25, 25, -25, -0.25, -25, 25, -0.25, 25, 25, -0.25, -25, -25, -0.25, -25 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.141176, 0.921569, 0.321569, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 50, 0.5, 50 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 39.5053, 14.9009, 0.001 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="KinematicBody" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71325, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Suelo" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68687, 21.7125 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1455, 3.21939 )
+shape = SubResource( 4 )
+
+[node name="StaticBody4" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68687, -24.8262 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1455, 3.21939 )
+shape = SubResource( 4 )
+
+[node name="StaticBody3" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.7687, 2.68687, 4.34229 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1455, 3.21939 )
+shape = SubResource( 4 )
+
+[node name="StaticBody5" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.1456, 2.68687, 4.34229 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1455, 3.21939 )
+shape = SubResource( 4 )
+
+[node name="InterfazUsuario" parent="." instance=ExtResource( 2 )]
+
+[editable path="InterfazUsuario"]
