@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Bots/desk.glb" type="PackedScene" id=1]
+[ext_resource path="res://Bots/table.glb" type="PackedScene" id=2]
+[ext_resource path="res://Bots/wood.material" type="Material" id=3]
+[ext_resource path="res://Bots/new_spatialmaterial.tres" type="Material" id=4]
+[ext_resource path="res://Bots/KinematicBody.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 19.219, 0, 0, 0, 1, 0, 0, 0, 8.284, 1.13031, 0, 0.0188785 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04392, 1.00044, -2.4176 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="desk" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.713662, 0, -0.402277 )
+
+[node name="desk(Clone)" parent="Spatial/desk" index="0"]
+material/0 = ExtResource( 4 )
+
+[node name="drawer" parent="Spatial/desk/desk(Clone)" index="0"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 3 )
+
+[node name="table" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 0.72959, 0, 0.683885, 0, 1, 0, -0.683885, 0, 0.72959, 1.0528, 0, 0 )
+
+[node name="table(Clone)" parent="Spatial/table" index="0"]
+material/0 = ExtResource( 4 )
+
+[node name="table2" parent="Spatial" instance=ExtResource( 2 )]
+transform = Transform( 0.72959, 0, -0.683885, 0, 1, 0, 0.683885, 0, 0.72959, -0.946766, 0, -0.579481 )
+
+[node name="table(Clone)" parent="Spatial/table2" index="0"]
+material/0 = ExtResource( 4 )
+
+[connection signal="body_entered" from="Area" to="KinematicBody" method="_on_Area_body_entered"]
+
+[editable path="Spatial/desk"]
+[editable path="Spatial/table"]
+[editable path="Spatial/table2"]

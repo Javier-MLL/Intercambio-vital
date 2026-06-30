@@ -1,0 +1,151 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+
+[node name="PanelIntercambio" type="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = 200.0
+script = ExtResource( 1 )
+
+[node name="Titulo" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 40.0
+text = "MENU DE INTERCAMBIO"
+align = 1
+valign = 1
+
+[node name="BotonCerrar" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+text = "X"
+
+[node name="SeccionOfrecer" type="VBoxContainer" parent="."]
+margin_left = 40.0
+margin_top = 60.0
+margin_right = 240.0
+margin_bottom = 340.0
+custom_constants/separation = 10
+
+[node name="LabelOfrecer" type="Label" parent="SeccionOfrecer"]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "OFRECER AL BOT:"
+align = 1
+
+[node name="OfrecerComida" type="Button" parent="SeccionOfrecer"]
+margin_top = 24.0
+margin_right = 200.0
+margin_bottom = 58.0
+size_flags_vertical = 3
+text = "+ Comida"
+
+[node name="OfrecerAgua" type="Button" parent="SeccionOfrecer"]
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 102.0
+size_flags_vertical = 3
+text = "+ Agua"
+
+[node name="OfrecerCombustible" type="Button" parent="SeccionOfrecer"]
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 146.0
+size_flags_vertical = 3
+text = "+ Combustible"
+
+[node name="OfrecerMadera" type="Button" parent="SeccionOfrecer"]
+margin_top = 156.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_vertical = 3
+text = "+ Madera"
+
+[node name="OfrecerCristal" type="Button" parent="SeccionOfrecer"]
+margin_top = 201.0
+margin_right = 200.0
+margin_bottom = 235.0
+size_flags_vertical = 3
+text = "+ Cristal"
+
+[node name="OfrecerMetal" type="Button" parent="SeccionOfrecer"]
+margin_top = 245.0
+margin_right = 200.0
+margin_bottom = 280.0
+size_flags_vertical = 3
+text = "+ Metal"
+
+[node name="SeccionPedir" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -240.0
+margin_top = 60.0
+margin_right = -40.0
+margin_bottom = 340.0
+custom_constants/separation = 10
+
+[node name="LabelPedir" type="Label" parent="SeccionPedir"]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "PEDIR AL BOT:"
+align = 1
+
+[node name="PedirComida" type="Button" parent="SeccionPedir"]
+margin_top = 24.0
+margin_right = 200.0
+margin_bottom = 58.0
+size_flags_vertical = 3
+text = "- Comida"
+
+[node name="PedirAgua" type="Button" parent="SeccionPedir"]
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 102.0
+size_flags_vertical = 3
+text = "- Agua"
+
+[node name="PedirCombustible" type="Button" parent="SeccionPedir"]
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 146.0
+size_flags_vertical = 3
+text = "- Combustible"
+
+[node name="PedirMadera" type="Button" parent="SeccionPedir"]
+margin_top = 156.0
+margin_right = 200.0
+margin_bottom = 191.0
+size_flags_vertical = 3
+text = "- Madera"
+
+[node name="PedirCristal" type="Button" parent="SeccionPedir"]
+margin_top = 201.0
+margin_right = 200.0
+margin_bottom = 235.0
+size_flags_vertical = 3
+text = "- Cristal"
+
+[node name="PedirMetal" type="Button" parent="SeccionPedir"]
+margin_top = 245.0
+margin_right = 200.0
+margin_bottom = 280.0
+size_flags_vertical = 3
+text = "- Metal"
+
+[node name="BotonConfirmar" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -45.0
+margin_right = 100.0
+margin_bottom = -15.0
+text = "ACEPTAR INTERCAMBIO"
