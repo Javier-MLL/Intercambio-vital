@@ -42,6 +42,13 @@ func _ready():
 	if $PanelOpcionesPago.has_node("BotonCerrarPago"):
 		$PanelOpcionesPago/BotonCerrarPago.connect("pressed", panel_pagos, "hide")
 
+func _process(delta):
+	# Muestra el ratón cuando se abre el panel
+	if visible == true:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 # Se activa al elegir qué quieres obtener
 func _on_recurso_click(recurso_deseado):
 	recurso_a_comprar = recurso_deseado

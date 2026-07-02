@@ -27,68 +27,15 @@ margin_left = -40.0
 margin_bottom = 40.0
 text = "X"
 
-[node name="SeccionOfrecer" type="VBoxContainer" parent="."]
-margin_left = 40.0
-margin_top = 60.0
-margin_right = 240.0
-margin_bottom = 340.0
-custom_constants/separation = 10
-
-[node name="LabelOfrecer" type="Label" parent="SeccionOfrecer"]
-margin_right = 200.0
-margin_bottom = 14.0
-text = "OFRECER AL BOT:"
-align = 1
-
-[node name="OfrecerComida" type="Button" parent="SeccionOfrecer"]
-margin_top = 24.0
-margin_right = 200.0
-margin_bottom = 58.0
-size_flags_vertical = 3
-text = "+ Comida"
-
-[node name="OfrecerAgua" type="Button" parent="SeccionOfrecer"]
-margin_top = 68.0
-margin_right = 200.0
-margin_bottom = 102.0
-size_flags_vertical = 3
-text = "+ Agua"
-
-[node name="OfrecerCombustible" type="Button" parent="SeccionOfrecer"]
-margin_top = 112.0
-margin_right = 200.0
-margin_bottom = 146.0
-size_flags_vertical = 3
-text = "+ Combustible"
-
-[node name="OfrecerMadera" type="Button" parent="SeccionOfrecer"]
-margin_top = 156.0
-margin_right = 200.0
-margin_bottom = 191.0
-size_flags_vertical = 3
-text = "+ Madera"
-
-[node name="OfrecerCristal" type="Button" parent="SeccionOfrecer"]
-margin_top = 201.0
-margin_right = 200.0
-margin_bottom = 235.0
-size_flags_vertical = 3
-text = "+ Cristal"
-
-[node name="OfrecerMetal" type="Button" parent="SeccionOfrecer"]
-margin_top = 245.0
-margin_right = 200.0
-margin_bottom = 280.0
-size_flags_vertical = 3
-text = "+ Metal"
-
 [node name="SeccionPedir" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -240.0
-margin_top = 60.0
-margin_right = -40.0
-margin_bottom = 340.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
 custom_constants/separation = 10
 
 [node name="LabelPedir" type="Label" parent="SeccionPedir"]
@@ -100,42 +47,42 @@ align = 1
 [node name="PedirComida" type="Button" parent="SeccionPedir"]
 margin_top = 24.0
 margin_right = 200.0
-margin_bottom = 58.0
+margin_bottom = 45.0
 size_flags_vertical = 3
 text = "- Comida"
 
 [node name="PedirAgua" type="Button" parent="SeccionPedir"]
-margin_top = 68.0
+margin_top = 55.0
 margin_right = 200.0
-margin_bottom = 102.0
+margin_bottom = 76.0
 size_flags_vertical = 3
 text = "- Agua"
 
 [node name="PedirCombustible" type="Button" parent="SeccionPedir"]
-margin_top = 112.0
+margin_top = 86.0
 margin_right = 200.0
-margin_bottom = 146.0
+margin_bottom = 107.0
 size_flags_vertical = 3
 text = "- Combustible"
 
 [node name="PedirMadera" type="Button" parent="SeccionPedir"]
-margin_top = 156.0
+margin_top = 117.0
 margin_right = 200.0
-margin_bottom = 191.0
+margin_bottom = 138.0
 size_flags_vertical = 3
 text = "- Madera"
 
 [node name="PedirCristal" type="Button" parent="SeccionPedir"]
-margin_top = 201.0
+margin_top = 148.0
 margin_right = 200.0
-margin_bottom = 235.0
+margin_bottom = 169.0
 size_flags_vertical = 3
 text = "- Cristal"
 
 [node name="PedirMetal" type="Button" parent="SeccionPedir"]
-margin_top = 245.0
+margin_top = 179.0
 margin_right = 200.0
-margin_bottom = 280.0
+margin_bottom = 200.0
 size_flags_vertical = 3
 text = "- Metal"
 
@@ -149,3 +96,39 @@ margin_top = -45.0
 margin_right = 100.0
 margin_bottom = -15.0
 text = "ACEPTAR INTERCAMBIO"
+
+[node name="PanelOpcionesPago" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BotonCerrarPago" type="Button" parent="PanelOpcionesPago"]
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+margin_left = -25.0
+margin_top = -20.0
+margin_right = 25.0
+text = "Cerrar"
+
+[node name="ContenedorBotonesPago" type="VBoxContainer" parent="PanelOpcionesPago"]
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 44.0
+
+[node name="Prueba" type="Button" parent="PanelOpcionesPago/ContenedorBotonesPago"]
+margin_right = 200.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+text = "Pago 1"
+
+[node name="Prueba2" type="Button" parent="PanelOpcionesPago/ContenedorBotonesPago"]
+margin_top = 24.0
+margin_right = 200.0
+margin_bottom = 44.0
+text = "Pago 2"

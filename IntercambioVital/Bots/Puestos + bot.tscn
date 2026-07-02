@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Bots/desk.glb" type="PackedScene" id=1]
 [ext_resource path="res://Bots/table.glb" type="PackedScene" id=2]
 [ext_resource path="res://Bots/wood.material" type="Material" id=3]
 [ext_resource path="res://Bots/new_spatialmaterial.tres" type="Material" id=4]
 [ext_resource path="res://Bots/KinematicBody.gd" type="Script" id=5]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.233427, 8.56976, 0.454196 )
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -14,6 +17,10 @@
 
 [node name="Area" type="Area" parent="."]
 transform = Transform( 19.219, 0, 0, 0, 1, 0, 0, 0, 8.284, 1.13031, 0, 0.0188785 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 3 )
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04392, 1.00044, -2.4176 )

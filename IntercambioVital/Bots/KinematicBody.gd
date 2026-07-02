@@ -35,7 +35,7 @@ func multipli_precio():
 	elif combustible >= 300:
 		multi_precio_co = 2
 
-onready var mi_panel = "res://Control.tscn"
+onready var mi_panel = get_node('/root/Spatial/PanelIntercambio')
 
 
 
@@ -45,11 +45,13 @@ func _on_Area_body_entered(body):
 		mi_panel.show() # Muestra el panel automáticamente
 		print("¡Jugador cerca! Panel abierto.")
 
+# Si el jugador sale del área el panel se esconde
+func _on_Area_body_exited(body):
+	if body.is_in_group("jugador"):
+		mi_panel.hide() # Oculta el panel automáticamente
+		print("¡Jugador se ha ido! Panel cerrado.")
+
 # Esta función se activa sola cuando haces clic en el botón de la pantalla
 func _on_boton_cerrar_presionado():
 	mi_panel.hide() # Esconde el panel de inmediato
 	print("Botón presionar. Panel cerrado.")
-	
-
-
-

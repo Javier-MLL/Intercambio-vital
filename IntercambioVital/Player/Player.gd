@@ -6,18 +6,18 @@ var combustible : int = 0
 var metal : int = 0
 var madera : int = 0
 var cristal : int = 0
-var necesario : int = 70
+var necesario : int = 0
 var dias_sobrevividos : int = 0
 export var tiempo_poner : int = 180
 onready var tiempo_restante: int = 0
-onready var tiempo = get_node("/root/Spatial/KinematicBody/Timer")
+onready var tiempo = get_node("/root/Spatial/Player/Timer")
 
-onready var comida_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer/Label')
-onready var agua_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer/Label2')
-onready var combustible_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer/Label3')
-onready var metal_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer2/Label')
-onready var madera_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer2/Label2')
-onready var cristal_l =  get_node('/root/Spatial/InterfazUsuario/CanvasLayer/VBoxContainer2/Label3')
+onready var comida_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer/Label')
+onready var agua_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer/Label2')
+onready var combustible_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer/Label3')
+onready var metal_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer2/Label')
+onready var madera_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer2/Label2')
+onready var cristal_l =  get_node('/root/Spatial/InterfazUsuario/CanvasLayer/MarginContainer/VBoxContainer2/Label3')
 onready var tiempo_l = get_node('/root/Spatial/InterfazUsuario/CanvasLayer/Panel/Label')
 
 
@@ -47,8 +47,6 @@ func _process(delta):
 	if tiempo:
 		tiempo_restante = int(tiempo.time_left)
 	actualizar_label()
-
-	
 
 func _input(event: InputEvent) -> void:
 	# REPARADO: El giro se calcula aquí al milisegundo exacto en que se mueve el ratón
